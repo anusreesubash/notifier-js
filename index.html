@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expense Manager</title>
+  <script src="jquery.js"></script>
+  <script src="notifier.js"></script>
+
+  <style type="text/css">
+    html, body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      padding-top: 50px;
+    }
+
+    .container {
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3 class="title">Notifier Demo</h3>
+    <button id="info">Info</button>
+    <button id="success">Success</button>
+    <button id="warning">Warning</button>
+    <button id="error">Error</button>
+  </div>
+</body>
+
+<script type="text/javascript">
+  let notifier = new Notification({
+    timeout: 3000
+  });
+
+  $('#info').click(function() {
+    notifier.info({
+      message: 'reached here'
+    });    
+  });
+
+  $('#success').click(function() {
+    notifier.success({
+      message: 'Success'
+    });    
+  });
+  $('#warning').click(function() {
+    notifier.warning({
+      message: 'Warning'
+    });    
+  });
+  $('#error').click(function() {
+    notifier.error({
+      message: 'Error'
+    });    
+  });
+</script>
+</html>
